@@ -1,0 +1,22 @@
+from random import random
+
+dés = int(input(Combien de dés souhaitez-vous lancer ?”))
+
+score= 
+for dés in range (dés):
+	 sol = random()
+	if 0<sol<0.17:
+		résutlat = 1
+	if 0.17<sol<0.33:
+		résutlat = 2
+	if 0.33<sol<0.5:
+		résutlat = 3
+	if 0.5<sol<0.66:
+		résutlat = 4
+	if 0.66<sol<0.83:
+		résutlat = 5
+	if 0.83<sol<0.1:
+		résutlat = 6
+	score+=résultat
+	
+print(score)
