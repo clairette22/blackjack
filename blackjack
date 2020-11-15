@@ -22,7 +22,7 @@ while b==0 :                                                             #Ce pro
 	  
       if totalBanque>21:                                                 #Si la banque a un score superieur a 21,
          if total1J>21:                                                  #Et le joueur aussi,
-            print("La banque et le joueur ont perdu")                    #On affcihe que la banque et le joueur ont perdu.
+            print(for.RED + "La banque et le joueur ont perdu")                    #On affcihe que la banque et le joueur ont perdu.
             a=1                                                          #Le scripte ne recommencera pas
          else :                                                          #Sinon, si le joueur a un score inferieur a 21,
             print("La banque a perdu, le joueur a gagne")                #On affiche que le joueur perd et donc la banque gagne
