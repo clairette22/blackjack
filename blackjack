@@ -1,1 +1,60 @@
-print("blackjack")
+from random import*                                                      #Le module random est importe
+b=0                                                                      #On cree et initialise la variable b a 0
+while b==0 :                                                             #Ce programme s execute tant que b = 0
+   a=0                                                                   #On cree et initialise la variable a a 0                                
+   total1J = 0                                                           #On cree et initialise la variable total1J a 0. Cette variable represente le joueur.
+   totalBanque = 0                                                       #On cree et initialise la variable totalBanque a 0. Cette variable represente la banque.
+
+   while a==0:                                                           #Ce programme s execute tant que a = 0.
+      nb = int(input("Combien de des voulez-vous lancer ? "))            #Le nombre de des lances par le joueur est affecte dans la variable nb.
+      print()
+      for i in range (nb):                                               #Boucle for se repetant autant de fois qu'il y a de des.
+          face = randint(1,6)                                            #On attribut a la variable face un nombre aleatoire entre 1 et 6.
+          total1J += face                                                #Ce nombre est ajoute a la variable total1J
+      print("Vous avez fait", total1J)                                   #On affiche le resultat des des du joueur
+      print()
+		
+      for i in range (nb):                                               #Boucle for se repetant autant de fois qu'il y a de des.
+         face = randint(1,6)                                             #On attribut a la variable face un nombre aleatoire entre 1 et 6.
+         totalBanque += face                                             #Ce nombre est ajoute a la variable totalBanque
+      print("La banque a fait", totalBanque)                             #On affiche le resultat des des de la banque
+      print()
+	  
+      if totalBanque>21:                                                 #Si la banque a un score superieur a 21,
+         if total1J>21:                                                  #Et le joueur aussi,
+            print("La banque et le joueur ont perdu")                    #On affcihe que la banque et le joueur ont perdu.
+            a=1                                                          #Le scripte ne recommencera pas
+         else :                                                          #Sinon, si le joueur a un score inferieur a 21,
+            print("La banque a perdu, le joueur a gagne")                #On affiche que le joueur perd et donc la banque gagne
+            a=1                                                          #Le scripte ne recommencera pas
+			
+      elif totalBanque<21:                                               #sinon, si la banque a un score inferieur a 21,
+         if total1J>21:                                                  #Et si le joueur un score superieur a 21,
+            print("Le joueur 1 a perdu, la banque a gagne")              #On affiche que la banque a gagne
+            a=1                                                          #Le scripte ne recommencera pas
+         elif total1J==21 :                                              #Sinon, si le joueur a un score egal a 21,
+            print("le joueur 1 a gagne, la banque a perdu")              #On affiche que le joueur a gagne et la banque a perdu 
+            a=1                                                          #Le scripte ne recommencera pas
+         else :                                                          #Sinon, si le joueur a un score inferieur a 21,
+            print("Le joueur peut relancer le nombre de des qu'il souhaite pour atteindre 21") #On affiche que le joueur peut rejouer
+            print()
+            a=0                                                          #Le scripte recommencera
+	 
+      else :                                                             #Si la banque a un score egal a 21,
+         if total1J==totalBanque:                                        #Et le joueur aussi,
+            print("Egalite")                                             #On affiche qu'il y a egalite
+            a=1                                                          #Le scripte ne recommencera pas.
+         else :                                                          #Si le joueur a un score inferieur ou superieur a 21,
+            print("La banque a gagne, vous avez perdu")                  #On affiche que la banque a gagne,
+            a=1                                                          #Le scripte ne recommencera pas.
+                
+   print()
+   rejoue=str(input("Souhaiter vous rejouer (oui/non) ? "))              #A la fin du programme, la variable rejoue demande au joueur s il souhaite rejouer 
+   if rejoue =="oui" :                                                   #S il saisit "oui",
+      b=0                                                                #Le programme recommencera du debut.
+      print()
+   else:                                                                 #Sinon,
+      b=1                                                                #Le programme s arretera
+      print()
+      print("Merci d'avoir joué")
+
