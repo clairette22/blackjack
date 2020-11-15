@@ -1,4 +1,5 @@
 from random import*                                                      #Le module random est importe
+from colorama import*
 b=0                                                                      #On cree et initialise la variable b a 0
 while b==0 :                                                             #Ce programme s execute tant que b = 0
    a=0                                                                   #On cree et initialise la variable a a 0                                
